@@ -8,6 +8,7 @@ function App() {
 
   return (
     <>
+    <p>miooo</p>
     <div className="flex items-center justify-between bg-[#3b2a16]/90 text-white rounded-2xl p-4 shadow-lg max-w-2xl p-6 max-w-sm mx-auto bg-white rounded-xl shadow-md flex items-center space-x-4">
       {/* توضیحات */}
       <div className="flex-1 pr-4">
