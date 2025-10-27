@@ -3,7 +3,7 @@ import React from 'react'
 function Col() {
   return (
     <>
-      <div className="flex items-center justify-between bg-[#3b2a16]/90 text-white rounded-2xl p-4 shadow-lg max-w-2xl">
+      <div className="flex items-center justify-between bg-[#3b2a16]/90 text-white rounded-2xl p-4 shadow-lg max-w-2xl ">
       {/* توضیحات */}
       <div className="flex-1 pr-4">
         <h2 className="text-xl font-bold mb-1">بشقاب قزل آلا سوخاری</h2>
