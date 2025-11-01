@@ -1,1 +1,62 @@
 @import "tailwindcss";
+
+/* App background and helpers */
+html, body, #root {
+	height: 100%;
+}
+
+
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* subtle app container padding for desktop */
+.app-shell { padding: 24px 12px; }
+
+/* small utility for slightly larger scale on hover if needed */
+.scale-102 { transform: scale(1.02); }
+
+html { scroll-behavior: smooth; }
+
+/* Fixed nav styling */
+
+.fixed-category-nav {
+  position: fixed;
+  top: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 80;
+  width: calc(100% - 32px);
+  max-width: 1100px;
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+}
+
+/* nav inner area should accept pointer events */
+.fixed-category-nav > div { pointer-events: auto }
+
+/* ensure main content is pushed down so nav doesn't cover it */
+.has-fixed-nav { padding-top: 96px; }
+
+/* responsive: reduce padding-top on small screens */
+@media (max-width: 640px) {
+	.has-fixed-nav { padding-top: 140px; }
+}
+
+/* nav gradient masks to hint overflow */
+.nav-mask-left, .nav-mask-right {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	width: 56px;
+	pointer-events: none;
+}
+.nav-mask-left { left: 0; background: linear-gradient(90deg, rgba(255,255,255,1), rgba(255,255,255,0)); }
+.nav-mask-right { right: 0; background: linear-gradient(270deg, rgba(255,255,255,1), rgba(255,255,255,0)); }
+
+/* active pill subtle underline */
+.nav-active-underline {
+	height: 4px;
+	background: linear-gradient(90deg, rgba(124,58,237,1), rgba(59,130,246,1));
+	border-radius: 9999px;
+	margin-top: 6px;
+}

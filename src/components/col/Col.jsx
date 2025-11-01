@@ -3,7 +3,7 @@ import React from 'react'
 function Col({ title, description, price, imageUrl, imageAlt }) {
   return (
     <>
-      <div dir="rtl" className="flex w-1/2 pr-4 border rounded-2xl p-4 gap-3 items-start">
+      <div dir="rtl" className="flex w-full pr-4 rounded-2xl p-4 gap-4 items-start shadow-sm hover:shadow-lg transition-shadow duration-200 bg-card">
         <div className="flex-1 min-w-0">
           <h2 className="text-xl font-bold mb-1">
             {title}
@@ -11,26 +11,19 @@ function Col({ title, description, price, imageUrl, imageAlt }) {
           <p className="text-sm mb-3 leading-relaxed break-words">
             {description}
           </p>
-          <div className="flex w-40 border rounded-xl items-center justify-between">
+          <div className="flex w-40 border rounded-xl items-center justify-between bg-white/60">
             <span className="text-lg pr-2 font-semibold">
               {price}
             </span>
-            <button className="bg-black/20 rounded-l-xl hover:bg-white/30 text-white rounded-md px-2 py-1 text-lg font-bold transition">
+            <button className="rounded-l-xl rounded-md px-3 py-1 text-lg font-bold transition-transform transform hover:-translate-y-0.5 bg-coffee text-white">
               +
             </button>
           </div>
         </div>
-
-        <div className="w-60 flex-shrink-0">
-          <img
-            src={imageUrl}
-            alt={imageAlt}
-            className="w-full h-auto object-cover rounded-xl"
-          />
+        <div className="w-40 sm:w-56 shrink-0">
+          <img src={imageUrl} alt={imageAlt} className="w-full h-36 object-cover rounded-xl" />
         </div>
       </div>
-
-
 
     </>
   )
