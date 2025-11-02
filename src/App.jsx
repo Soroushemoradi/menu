@@ -45,21 +45,21 @@ function App() {
         title: 'سینی پیشنهادی',
         description: 'مجموعه‌ای از نوشیدنی‌ها و کیک‌های منتخب',
         price: 35000,
-        imageUrl: '/Capture.PNG'
+        imageUrl: '/coffee2.jpg'
       },
       {
         title: 'بسته ویژه',
         description: 'ترکیبی جذاب از کاپوچینو و براونی',
         price: 42000,
-        imageUrl: '/Capture.PNG'
+        imageUrl: '/coffee1.jpg'
       }
     ]
 
   return (
-    <div className="app-shell has-fixed-nav bg-amber-500">
+    <div className="app-shell has-fixed-nav bg-yellow-900">
       <Menu categories={categories} />
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-10 mt-8 mx-8">
           {/* placeholder products to demonstrate grid */}
           {suggests.map((item, i) => (
             <Col key={i} title={item.title} description={item.description} price={item.price} imageUrl={item.imageUrl} imageAlt={item.title} />
