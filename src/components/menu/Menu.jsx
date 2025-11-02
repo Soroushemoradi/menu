@@ -92,9 +92,9 @@ export default function Menu({ categories = [], items = [] }) {
         <div className="mx-auto max-w-5xl">
             {/* Fixed nav (desktop + responsive) */}
             <div className="fixed-category-nav">
-                <div className="mb-0 bg-white/60 backdrop-blur-sm rounded-2xl p-3 shadow-sm z-50">
+                <div className="mb-0 bg-white/50 backdrop-blur-sm rounded-2xl p-3 shadow-sm z-50">
                     <div className="flex items-center justify-between mb-2">
-                        <h2 className="text-lg font-semibold px-1">منو</h2>
+                        <h2 className="text-2xl font-semibold px-1">منو</h2>
                     </div>
 
                     <div ref={navRef} className="flex gap-3 overflow-x-auto py-2 no-scrollbar">
@@ -129,7 +129,7 @@ export default function Menu({ categories = [], items = [] }) {
                                         </motion.div>
                                     )}
 
-                                    <span className="text-sm font-medium mt-2 sm:mt-0 text-center sm:text-right">{cat.title}</span>
+                                    <span className="text-base font-medium  text-black mt-2 sm:mt-0 text-center sm:text-right">{cat.title}</span>
                                 </button>
                             )
                         })}
@@ -145,20 +145,20 @@ export default function Menu({ categories = [], items = [] }) {
                     data-catid={cat.id}
                     className="mb-6"
                 >
-                    <div className="flex items-center justify-between mt-15 mb-2">
-                        <h3 className="text-md font-medium">{cat.title}</h3>
+                    <div className="flex items-center justify-between mt-20 mb-8">
+                        <h3 className="text-2xl   text-white font-medium">{cat.title}</h3>
                     </div>
 
                     <div className="overflow-x-auto -mx-3 px-3 no-scrollbar">
-                        <div className="grid grid-flow-col grid-rows-2 gap-4 auto-cols-[270px] py-2">
+                        <div className="grid sm:grid-flow-col sm:grid-rows-3 gap-4 auto-cols-[350px] sm:auto-cols-[400px] lg:auto-cols-[330px] py-2">
                             {(cat.items || []).map((it) => (
-                                <div key={it.id} className="inline-flex flex-col items-start bg-white/90 border border-transparent rounded-2xl p-4 shrink-0 shadow-sm hover:shadow-lg transform transition-all duration-200">
+                                <div key={it.id} className="inline-flex flex-col items-start bg-white/80 border border-transparent rounded-2xl p-4 shrink-0 shadow-sm hover:shadow-lg transform transition-all duration-200">
                                     {it.imageUrl && (
-                                        <img src={it.imageUrl} alt={it.title} className="w-full h-36 object-cover rounded-lg mb-3 shadow-sm" />
+                                        <img src={it.imageUrl} alt={it.title} className="w-full h-full object-cover rounded-lg mb-3 shadow-sm" />
                                     )}
                                     <div className="text-right w-full">
-                                        <div className="text-sm font-semibold">{it.title}</div>
-                                        {it.subtitle && <div className="text-xs text-gray-500 mt-1">{it.subtitle}</div>}
+                                        <div className="text-lg font-semibold">{it.title}</div>
+                                        {it.subtitle && <div className="text-[14px] text-gray-500 mt-1">{it.subtitle}</div>}
                                     </div>
                                 </div>
                             ))}

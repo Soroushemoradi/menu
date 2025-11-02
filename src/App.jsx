@@ -5,9 +5,9 @@ import Menu from './components/menu/Menu'
 
 function App() {
   const hot = [
-    { id: 'h1', title: 'قهوه ترک', subtitle: 'داغ و خوش‌‌عطر', imageUrl: '/Capture.PNG' },
-    { id: 'h2', title: 'کاپوچینو', subtitle: 'خامه‌ای', imageUrl: '/Capture.PNG' },
-    { id: 'h3', title: 'لاته', subtitle: 'نرم و شیرین', imageUrl: '/Capture.PNG' },
+    { id: 'h1', title: 'قهوه ترک', subtitle: 'داغ و خوش‌‌عطر', imageUrl: '/coffee1.jpg' },
+    { id: 'h2', title: 'کاپوچینو', subtitle: 'خامه‌ای', imageUrl: '/Cappuccino.png' },
+    { id: 'h3', title: 'لاته', subtitle: 'نرم و شیرین', imageUrl: '/Latte.jpg' },
     { id: 'h4', title: 'اسپرسو', subtitle: 'قوی و تلخ', imageUrl: '/Capture.PNG' },
     { id: 'h5', title: 'موکا', subtitle: 'شکلاتی', imageUrl: '/Capture.PNG' },
     { id: 'h6', title: 'آمریکانو', subtitle: 'سبک و دلپذیر', imageUrl: '/Capture.PNG' },
@@ -17,7 +17,7 @@ function App() {
 
   const cold = [
     { id: 'c1', title: 'آیس‌کافی', subtitle: 'خنک و تازه', imageUrl: '/Capture.PNG' },
-    { id: 'c2', title: 'شیک شکلات', subtitle: 'خنک و غنی', imageUrl: '/Capture.PNG' },
+    { id: 'c2', title: 'شیک شکلات', subtitle: 'خنک و غنی', imageUrl: '/Milkshake.png' },
     { id: 'c3', title: 'آیس لاته', subtitle: 'خنک و لطیف', imageUrl: '/Capture.PNG' },
     { id: 'c4', title: 'آیس موکا', subtitle: 'شکلاتی و خنک', imageUrl: '/Capture.PNG' },
     { id: 'c5', title: 'لیموناد قهوه', subtitle: 'ترش و جالب', imageUrl: '/Capture.PNG' },
@@ -56,7 +56,7 @@ function App() {
     ]
 
   return (
-    <div className="app-shell has-fixed-nav bg-yellow-900">
+    <div className="app-shell has-fixed-nav bg-[#342309]">
       <Menu categories={categories} />
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-10 mt-8 mx-8">
