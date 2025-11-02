@@ -145,7 +145,7 @@ export default function Menu({ categories = [], items = [] }) {
                     data-catid={cat.id}
                     className="mb-6"
                 >
-                    <div className="flex items-center justify-between mb-2">
+                    <div className="flex items-center justify-between mt-15 mb-2">
                         <h3 className="text-md font-medium">{cat.title}</h3>
                     </div>
 

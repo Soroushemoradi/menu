@@ -11,13 +11,10 @@ function Col({ title, description, price, imageUrl, imageAlt }) {
           <p className="text-sm mb-3 leading-relaxed break-words">
             {description}
           </p>
-          <div className="flex w-40 border rounded-xl items-center justify-between bg-white/60">
-            <span className="text-lg pr-2 font-semibold">
+          <div className="w-20 border rounded-xl text-center items-center p-1 bg-white/60">
+            <span className="text-lg text-center font-semibold">
               {price}
             </span>
-            <button className="rounded-l-xl rounded-md px-3 py-1 text-lg font-bold transition-transform transform hover:-translate-y-0.5 bg-coffee text-white">
-              +
-            </button>
           </div>
         </div>
         <div className="w-40 sm:w-56 shrink-0">
