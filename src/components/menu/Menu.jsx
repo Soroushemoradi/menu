@@ -150,7 +150,7 @@ export default function Menu({ categories = [], items = [] }) {
                     </div>
 
                     <div className="overflow-x-auto -mx-3 px-3 no-scrollbar">
-                        <div className="grid sm:grid-flow-col sm:grid-rows-3 gap-4 auto-cols-[350px] sm:auto-cols-[400px] lg:auto-cols-[330px] py-2">
+                        <div className="grid grid-flow-row sm:grid-flow-col grid-rows-1 lg:grid-rows-3 gap-4 auto-cols-[350px] lg:auto-cols-[330px]">
                             {(cat.items || []).map((it) => (
                                 <div key={it.id} className="inline-flex flex-col items-start bg-white/80 border border-transparent rounded-2xl p-4 shrink-0 shadow-sm hover:shadow-lg transform transition-all duration-200">
                                     {it.imageUrl && (
