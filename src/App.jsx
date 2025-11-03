@@ -63,7 +63,7 @@ function App() {
     ]
 
   return (
-    <div className="app-shell has-fixed-nav bg-[#342309]">
+    <div className="app-shell has-fixed-nav bg-[#34b6ef]">
       <Menu categories={categories} />
 
     </div>
