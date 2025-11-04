@@ -12,8 +12,8 @@ function Col({ title, description, price, imageUrl, imageAlt }) {
             {description}
           </p>
           <div className="w-20 border rounded-xl text-center items-center p-1 bg-white/60">
-            <span className="text-lg text-center font-semibold">
-              {price}
+            <span className="text-lg text-center font-semibold bg-gradient-to-r from-[#34b6ef] to-sky-500 text-white px-2 py-0.5 rounded-lg inline-block">
+              {typeof price === 'number' ? price.toLocaleString() : price} تومان
             </span>
           </div>
         </div>

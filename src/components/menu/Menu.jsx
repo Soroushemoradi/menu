@@ -152,11 +152,17 @@ export default function Menu({ categories = [], items = [] }) {
                     <div className="overflow-x-auto -mx-3 px-3 no-scrollbar">
                         <div className="grid grid-flow-row sm:grid-flow-col grid-rows-1 lg:grid-rows-3 gap-4 auto-cols-[350px] lg:auto-cols-[330px]">
                             {(cat.items || []).map((it) => (
-                                <div key={it.id} className="inline-flex flex-col items-start bg-white/80 border border-transparent rounded-2xl p-4 shrink-0 shadow-sm hover:shadow-lg transform transition-all duration-200">
+                                <div key={it.id} className="relative inline-flex flex-col items-start bg-white/80 border border-transparent rounded-2xl p-4 shrink-0 shadow-sm hover:shadow-lg transform transition-all duration-200">
                                     {it.imageUrl && (
                                         <img src={it.imageUrl} alt={it.title} className="w-full h-full object-cover rounded-lg mb-3 shadow-sm" />
                                     )}
                                     <div className="text-right w-full">
+                                        {/* price badge top-right */}
+                                        {typeof it.price !== 'undefined' && (
+                                            <div className="absolute right-4 top-4 px-3 py-1 rounded-full text-sm font-bold text-white bg-gradient-to-r from-[#34b6ef] to-sky-500 shadow-md">
+                                                {typeof it.price === 'number' ? it.price.toLocaleString() : it.price} تومان
+                                            </div>
+                                        )}
                                         <div className="text-lg font-semibold">{it.title}</div>
                                         {it.subtitle && <div className="text-[14px] text-gray-500 mt-1">{it.subtitle}</div>}
                                     </div>
