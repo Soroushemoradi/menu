@@ -1,6 +1,5 @@
 import React from 'react'
 import './App.css'
-import Col from './components/col/Col'
 import Menu from './components/menu/Menu'
 
 function App() {

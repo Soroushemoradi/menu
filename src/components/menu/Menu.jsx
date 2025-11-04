@@ -78,7 +78,12 @@ export default function Menu({ categories = [], items = [] }) {
 
     const onNavClick = (id) => {
         const el = sectionRefs.current[id]
-        if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' })
+        if (el) {
+            // compute offset so the section top sits just below the fixed nav
+            const offset = getNavOffset()
+            const top = el.getBoundingClientRect().top + window.scrollY - offset
+            window.scrollTo({ top, behavior: 'smooth' })
+        }
         setActive(id)
 
         // make clicked nav button visible in its horizontal container
@@ -106,7 +111,7 @@ export default function Menu({ categories = [], items = [] }) {
                                     key={cat.id}
                                     data-nav={cat.id}
                                     onClick={() => onNavClick(cat.id)}
-                                    className={`flex flex-col items-center sm:inline-flex sm:flex-row sm:items-center sm:gap-3 px-3 py-2 rounded-full transition-transform duration-200 ${isActive ? 'bg-coffee text-white shadow-coffee-glow' : 'bg-white/80 text-gray-800 hover:scale-102'}`}
+                                    className={`flex flex-col items-center sm:inline-flex sm:flex-row sm:items-center sm:gap-3 px-3 py-2 rounded-xl transition-transform duration-200 ${isActive ? 'bg-coffee text-white shadow-coffee-glow' : 'bg-white/80 text-gray-800 hover:scale-102'}`}
                                     aria-pressed={isActive}
                                 >
                                     {iconUrl ? (
@@ -149,8 +154,8 @@ export default function Menu({ categories = [], items = [] }) {
                         <h3 className="text-2xl   text-white font-medium">{cat.title}</h3>
                     </div>
 
-                    <div className="overflow-x-auto -mx-3 px-3 no-scrollbar">
-                        <div className="grid grid-flow-row sm:grid-flow-col grid-rows-1 lg:grid-rows-3 gap-4 auto-cols-[350px] lg:auto-cols-[330px]">
+                    <div className="px-3 no-scrollbar">
+                        <div className="grid grid-flow-row sm:grid-flow-col grid-rows-1 lg:grid-rows-3 gap-4 lg:auto-cols-[320px]">
                             {(cat.items || []).map((it) => (
                                 <div key={it.id} className="relative inline-flex flex-col items-start bg-white/80 border border-transparent rounded-2xl p-4 shrink-0 shadow-sm hover:shadow-lg transform transition-all duration-200">
                                     {it.imageUrl && (
@@ -158,13 +163,18 @@ export default function Menu({ categories = [], items = [] }) {
                                     )}
                                     <div className="text-right w-full">
                                         {/* price badge top-right */}
+                                        <div className="text-lg font-semibold">{it.title}</div>
+                                        {it.subtitle && <div className="text-[14px] text-gray-500 mt-1">{it.subtitle}</div>}
+                                        <div className='grid grid-cols-2'>
+                                            <div>
+
+                                            </div>
                                         {typeof it.price !== 'undefined' && (
-                                            <div className="absolute right-4 top-4 px-3 py-1 rounded-full text-sm font-bold text-white bg-gradient-to-r from-[#34b6ef] to-sky-500 shadow-md">
+                                            <div className="w-30 mr-6 mt-3 px-3 py-1 rounded-full text-center text-sm font-bold text-white bg-gradient-to-r from-[#34b6ef] to-sky-500 shadow-md">
                                                 {typeof it.price === 'number' ? it.price.toLocaleString() : it.price} تومان
                                             </div>
                                         )}
-                                        <div className="text-lg font-semibold">{it.title}</div>
-                                        {it.subtitle && <div className="text-[14px] text-gray-500 mt-1">{it.subtitle}</div>}
+                                        </div>
                                     </div>
                                 </div>
                             ))}
